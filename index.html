@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Portrait Chinois</title>
+</head>
+<body>
+    <a class="btnHaut" href="#top">
+        <svg src="img/fleche.svg" width="56" height="56">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"></path>
+        </svg>
+    </a>
+   
+   
+    <!--modal btn-->
+    <section>
+        <div class="i p art">
+            <div class="i-titre">MON PORTRAIT CHINOIS</div>
+        </div>
+    </div>
+    </section>
+        <!--Sections analogies-->
+        <div class="liste-analogies"></div>
+
+       
+    <script src = "js-signe-chinois.js"></script>
+    <script>
+        var numCase;
+        var compteur;
+        donnees.forEach(function(element){
+
+document.querySelector('.liste-analogies').innerHTML=document.querySelector('.liste-analogies').innerHTML+=
+'<section class="sec" id="sec'+numCase+
+'"><h2>Si j’étais ' +  element["analogie"] +  
+', je serais '  + element["valeurAnalogie"] + 
+'.</h2>\n<img class="images-images" src="' + element["image"] + '"> \n<p class="texte">' +
+element["explication"] + '</p>\</section>'
+
+numCase++
+compteur++
+
+})
+
+</script>
+    <section class="formu" id="Formulaire">
+        <form>
+            <label for="analogie">Analogie :</label>
+            <input type="text" id="analogie" required>
+    
+            <label for="valeurAnalogie">Valeur Analogie :</label>
+            <input type="text" id="valeurAnalogie" required>
+    
+            <label for="imganalogie">Image Analogie :</label>
+            <input type="text" id="imganalogie" required>
+    
+             <label for="arganalogie">Argument Analogie :</label>
+            <input type="text" id="arganalogie" required>
+    
+            <label for="mail">Courriel :</label>
+            <input type="email" id="mail" required>
+    
+            <button id="sub">Soumettre</button>
+    
+        </form>
+        <div id="you"></div>
+         <div id="message"></div>
+    </section>
+
+<!-- Bouton pour ouvrir les mentions légales -->
+<button id="legal-btn">Mentions légales</button>
+
+<!-- Section cachée contenant les mentions légales -->
+<section id="legal-section" class="legal-popup"  style="display: none;">   
+    <h2>Mentions légales</h2>
+    <p>Mentions légales<br>
+        Informations éditeur :<br>
+        Ce site web est édité par loubx,<br>
+        Siège social : 2 Rue Albert Einstein, 77420 Champs-sur-Marne<br>
+        Email : louisr2d2@hotmail.fr<br>
+        Directeur de la publication : Louis Breux<br>
+        Hébergeur : Ce site est hébergé par l' IUT de Champs-sur-Marne, 2 Rue Albert Einstein, 77420 Champs-sur-Marne.clipartmax,<br>
+        crédis: go to shoping, wipekedia, freepik, neogarden, Canal VOD-mycanavod, prom.ua,zefurtif,Tristan.</p>
+    <button id="close-btn">Fermer</button>
+</section>
+
+<script>
+// Cibler les éléments HTML
+const legalBtn = document.querySelector("#legal-btn");
+const legalSection = document.querySelector("#legal-section");
+const closeBtn = document.querySelector("#close-btn");
+
+// Ajouter un écouteur d'événements 'click' sur le bouton pour les mentions légales
+legalBtn.addEventListener("click", function() {
+    legalSection.style.display = "block";
+});
+
+// Ajouter un écouteur d'événements 'click' sur le bouton de fermeture
+closeBtn.addEventListener("click", function() {
+    legalSection.style.display = "none";
+});
+</script>
+
+
+</body>
+</html>
+
